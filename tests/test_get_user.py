@@ -13,7 +13,7 @@ def test_get_user(load_user_data):
     response_code = response.status_code
     assert response_code ==200 ,f"response code is {response_code}"
     print("HERE IS THE USER")
-#hi
+#hi hello oumayma
 
 @mark.createUser
 def test_create_user(load_user_data):
