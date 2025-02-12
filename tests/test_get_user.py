@@ -36,7 +36,7 @@ def test_delete_user(load_user_data):
     assert response_code == 200 , f"response code is {response_code}"
     print('USER IS DELETED ')
 
-@mark.UpdateUser
+@mark.CreateUserAgain
 def test_update_user(load_user_data):
     json_body = load_user_data.copy()
 
@@ -46,3 +46,12 @@ def test_update_user(load_user_data):
     assert response_code == 201 , f"response code is {response_code}"
     print('SECOND USER IS DELETED ')
 
+@mark.UpdateUser
+def test_update_user(load_user_data):
+    json_body = load_user_data.copy()
+
+    response = APIs.apis("PUT","posts/1",json_body)
+    #print("response = ", response.json())
+    response_code = response.status_code
+    assert response_code == 200 , f"response code is {response_code}"
+    print('SECOND USER IS updated ')
